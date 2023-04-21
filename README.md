@@ -1,0 +1,2 @@
+# Szamitogep_Grafika
+I
