@@ -1,4 +1,4 @@
-# Szamitogep_Grafika
+# Grafika
 
 ***Féléves feladat:***
 
