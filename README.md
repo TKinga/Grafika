@@ -24,6 +24,6 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 
 *	részescskerendszer használata
 
-* akadályok megvalósítása és következményeinek kezelése (pl. rossz helyre kerül a jéggömb a játék véget ér)
+* akadályok megvalósítása és következményeinek kezelése (pl. ha rossz helyre kerül a jéggömb a játék véget ér)
 
 
