@@ -12,9 +12,11 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 
 * modell pattogása, mozgatása billentyűzettel
 
-*	fénykezelés és használati útmutató kezelése billentyűzettel
+*	fénykezelés billentyűzettel
 
-* ütközésvizsgálat: az objektum nem tud majd a játéktérről kimenni és keresztülmenni a pályán
+* használati útmutató előhozása gombnyomással
+
+* ütközésvizsgálat: az objektum nem tud majd a játéktérről kimenni és keresztülhaladni a pályán
 
 *	skybox használata
 
