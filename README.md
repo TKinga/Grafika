@@ -2,7 +2,7 @@
 
 ***Féléves feladat:***
 
-Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(pl tűz/parázs). Lehet majd vele ugrálni és előre-hátra mozogni-								
+Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(pl tűz/parázs). Lehet majd vele ugrálni és előre-hátra mozogni.								
 
 ***Szerepelni fog benne:***
 
