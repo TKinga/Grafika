@@ -35,6 +35,7 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 
 <kbd>F1</kbd> - User Guide előhívása, eltüntetése <br />
 <kbd>R</kbd> - Játék újraindítása <br />
+<kbd>mouse</kbd> - Kamera szabadkézi mozgatása <br />
 
 <kbd>W</kbd> - Kamera mozgatása előre <br />
 <kbd>A</kbd> - Kamera mozgatása balra <br />
