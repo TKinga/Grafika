@@ -1,6 +1,6 @@
 # Grafika
 
-*Tamás Kinga*-
+*Tamás Kinga* -
 *F75CP6*
 
 ***Féléves feladat:***
