@@ -3,11 +3,11 @@
 *Tamás Kinga* -
 *F75CP6*
 
-***Féléves feladat:***
+## ***Féléves feladat:***
 
 Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(tűz). Lehet majd vele ugrálni és előre-hátra mozogni.								
 
-***Szerepelni fog benne:***
+## ***Szerepelni fog benne:***
 
 * textúrázott modell
 
@@ -51,8 +51,8 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 <kbd>+</kbd> - Fénynövelés <br />
 <kbd>-</kbd> - Fénycsökkentés <br />
 
-
-***Assets***
+  
+ ##***Assets***
 https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sharing
 
 
