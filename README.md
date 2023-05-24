@@ -2,7 +2,7 @@
 
 ***Féléves feladat:***
 
-Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(pl tűz/parázs). Lehet majd vele ugrálni és előre-hátra mozogni.								
+Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(tűz). Lehet majd vele ugrálni és előre-hátra mozogni.								
 
 ***Szerepelni fog benne:***
 
@@ -16,14 +16,14 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 
 * használati útmutató előhozása gombnyomással
 
-* ütközésvizsgálat: az objektum nem tud majd a játéktérről kimenni és keresztülhaladni a pályán
+* ütközésvizsgálat: az objektum nem tud majd a játéktérről kimenni és keresztülhaladni a pályán + ha a tűzbe beleérkezik véget ér a játék
 
 *	skybox használata
 
 *	textúrázott jeges pálya megvalósítása
 
-*	részescskerendszer használata(pl. hóesés)
+*	köd sűrűségének az állítása billentyűzettel
 
-* akadályok megvalósítása és következményeinek kezelése (pl. ha rossz helyre kerül a jéggömb a játék véget ér)
+* akadályok megvalósítása és következményeinek kezelése (azaz ha a tűzbe érkezik a jéggömb a játék véget ér)
 
 
