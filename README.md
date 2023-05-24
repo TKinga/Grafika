@@ -7,8 +7,10 @@
 
 Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(tűz). Lehet majd vele ugrálni és előre-hátra mozogni.								
 
-## ***Szerepelni fog benne:***
+### ***Assets***
+https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sharing
 
+### ***Szerepelni fog benne:***
 * textúrázott modell
 
 * kamerakezelés: körbe tudjuk járni majd a teret, kamera követi majd a modell haladását
@@ -51,9 +53,9 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 <kbd>+</kbd> - Fénynövelés <br />
 <kbd>-</kbd> - Fénycsökkentés <br />
 
-  
- ##***Assets***
-https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sharing
+
+
+
 
 
 
