@@ -30,6 +30,28 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 * akadályok megvalósítása és következményeinek kezelése (azaz ha a tűzbe érkezik a jéggömb a játék véget ér)
 
 
+<kbd>F1</kbd> - User Guide előhívása, eltüntetése <br />
+
+<kbd>W</kbd> - Kamera mozgatása előre <br />
+<kbd>A</kbd> - Kamera mozgatása balra <br />
+<kbd>S</kbd> - Kamera mozgatása hátra <br />
+<kbd>D</kbd> - Kamera mozgatása jobbra <br />
+
+<kbd>J</kbd> - Jéggömb mozgatása balra <br />
+<kbd>L</kbd> - Jéggömb mozgatása jobbra <br />
+<kbd>I</kbd> - Jéggömb mozgatása előre <br />
+
+<kbd><</kbd> - Jéggömb és kamera mozgatása balra <br />
+<kbd>></kbd> - Jéggömb és kamera mozgatása jobbra <br />
+<kbd>^</kbd> - Jéggömb mozgatása fel <br />
+
+<kbd>T</kbd> - Köd sűrűségének csökkentése <br />
+<kbd>Z</kbd> - Köd sűrűségének növelése <br />
+
+<kbd>+</kbd> - Fénynövelés <br />
+<kbd>-</kbd> - Fénycsökkentés <br />
+
+
 ***Assets***
 https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sharing
 
