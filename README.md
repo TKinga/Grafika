@@ -30,3 +30,8 @@ Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíten
 * akadályok megvalósítása és következményeinek kezelése (azaz ha a tűzbe érkezik a jéggömb a játék véget ér)
 
 
+***Assets***
+https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sharing
+
+
+
