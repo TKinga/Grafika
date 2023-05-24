@@ -1,5 +1,8 @@
 # Grafika
 
+*Tamás Kinga*
+*F75CP6*
+
 ***Féléves feladat:***
 
 Egy jéggömb objektummal szeretnék interaktív, játékos feladatot készíteni. A jéggömbbel végig kell haladni úgy a pályán, hogy nem ütközik akadályokba(tűz). Lehet majd vele ugrálni és előre-hátra mozogni.								
