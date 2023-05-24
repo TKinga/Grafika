@@ -20,8 +20,8 @@ void init_camera(Camera* camera)
 
     camera->is_preview_visible = 0;
     camera->is_guide_visible = 1;
-    camera->is_lose_visible = 0;
-    camera->is_win_visible = 0;
+    //camera->is_lose_visible = 0;
+    //camera->is_win_visible = 0;
     
 }
 
@@ -107,6 +107,7 @@ void show_texture_preview()
 {
     glDisable(GL_LIGHTING);
     glDisable(GL_DEPTH_TEST);
+    //glDisable(GL_FOG);
     glEnable(GL_COLOR_MATERIAL);
 
     glMatrixMode(GL_MODELVIEW);
@@ -128,6 +129,7 @@ void show_texture_preview()
     glDisable(GL_COLOR_MATERIAL);
     glEnable(GL_LIGHTING);
     glEnable(GL_DEPTH_TEST);
+    //glEnable(GL_FOG);
 }
 
 void show_guide()
@@ -158,6 +160,8 @@ void show_guide()
     glEnable(GL_DEPTH_TEST);
 }
 
+
+/*
 void show_lose()
 {
     glDisable(GL_LIGHTING);
@@ -213,3 +217,4 @@ void show_win()
     glEnable(GL_LIGHTING);
     glEnable(GL_DEPTH_TEST);
 }
+*/

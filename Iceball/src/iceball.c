@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "camera.h"
 #include "app.h"
-
+#include "trophy.h"
 
 #include <obj/load.h>
 #include <obj/draw.h>
@@ -17,15 +17,19 @@ void init_iceball(Iceball* iceball)
     load_model(&(iceball->model), "assets/models/iceball.obj");
     iceball->iceball_texture_id = load_texture("assets/textures/iceball_texture.jpg");
     
+    iceball->is_win_visible=FALSE;
+    iceball->is_lose_visible=FALSE;
+
+
     iceball->radius = 0.4;
     iceball->position.x = 0.0;
     iceball->position.y = 0.0;
     iceball->position.z = 0.0;
     iceball->rotation.x = 0.0;
-    iceball->moving_speed = 0.0;
+    iceball->moving_speed = 1000.0;
     iceball->rotation_speed = 0.0;
     
-    iceball->gravity = -30.0;
+    iceball->gravity = -20.0;
     iceball->upward_speed = 0.0;
     iceball->in_the_air = FALSE;
     iceball->bouncing = 0;
@@ -47,11 +51,12 @@ void init_iceball(Iceball* iceball)
 
 void draw_iceball(Iceball* iceball)
 {
+    glBindTexture(GL_TEXTURE_2D, iceball->iceball_texture_id); //pushon belül volt
     glPushMatrix();
-    glBindTexture(GL_TEXTURE_2D, iceball->iceball_texture_id);
-    set_material(&(iceball->iceball_material));
     glTranslatef(iceball->position.x, iceball->position.y, iceball->position.z);
+    set_material(&(iceball->iceball_material));
     glRotatef(iceball->rotation.x, 1, 0, 0);
+    glVertex3f(iceball->position.x, iceball->position.y, iceball->position.z);
     draw_model(&(iceball->model));
     glPopMatrix();
 }
@@ -70,39 +75,41 @@ void reset_iceball(Iceball* iceball)
 }
     
 
-void update_iceball(Iceball* iceball, Map* map, Ice_element* ice_element, Fire* fire)
+void update_iceball(Iceball* iceball, Map* map, Ice_element* ice_element, Fire* fire, Trophy* trophy)
 {
-    float angle;
-    float side_angle;
+    //double angle;
+    //double side_angle;
 
-    angle = degree_to_radian(iceball->rotation.z);
-    side_angle = degree_to_radian(iceball->rotation.z + 90.0);
+    //angle = degree_to_radian(iceball->rotation.z);
+    //side_angle = degree_to_radian(iceball->rotation.z + 90.0);
 
     static int last_frame_time = 0;
     int current_time;
-    float elapsed_time;
+    double elapsed_time;
    
-    current_time = SDL_GetTicks();   
-    elapsed_time = (float)(current_time - last_frame_time) / 1000;
-    last_frame_time = current_time;
 
+    current_time = (double)SDL_GetTicks() ;   //HIÁNYZIK () belőle??
+    elapsed_time = (double)(current_time - last_frame_time)/1000;
+    last_frame_time = current_time;
+    
 
 
     //Left and right movement.
 
-    iceball->position.y += sin(side_angle) * iceball->moving_speed * elapsed_time;
-    iceball->rotation.x += cos(angle) * iceball->rotation_speed * elapsed_time;
+    iceball->position.y +=iceball->moving_speed * elapsed_time;
+    iceball->rotation.x +=iceball->rotation_speed * elapsed_time;
+ 
 
     if(iceball->position.y > 0.0){
         iceball->position.y = 0.0;
-        iceball->rotation.x -= cos(angle) * iceball->rotation_speed * elapsed_time;
+        iceball->rotation.x -=iceball->rotation_speed * elapsed_time;
         set_camera_speed(&camera, 0.0);
         set_camera_side_speed(&camera, 0.0);
     }
 
     if(iceball->position.y < -11.0){
         iceball->position.y = -11.0;
-        iceball->rotation.x -= cos(angle) * iceball->rotation_speed * elapsed_time;
+        iceball->rotation.x -=iceball->rotation_speed * elapsed_time;
         set_camera_speed(&camera, 0.0);
         set_camera_side_speed(&camera, 0.0);
     }
@@ -164,27 +171,33 @@ void update_iceball(Iceball* iceball, Map* map, Ice_element* ice_element, Fire* 
 
     //Bounding box.   FIRE 
 
-    float fire_l = fire->position.y+0.5;
-    float fire_r = fire->position.y-0.5;
-    float fire_h = fire->position.z;
+    float fire_l = ice_element->position.y +1.2;
+    float fire_r = ice_element->position.y - 0.4;
+    float fire_h = ice_element->position.z + 0.05;
+    
+/*
+if(iceball->position.y-iceball->radius>=fire->position.y +1.5 || iceball->position.y-iceball->radius<=fire->position.y -1.5 )
+{
+    iceball->is_lose_visible=TRUE;
+}
+*/
+
 
     if(iceball_r <= fire_l && iceball_l >= fire_r && iceball_b <= fire_h)
     {
-        camera.is_lose_visible = TRUE;
+       iceball->is_lose_visible=TRUE;
     }
 
-/*
-    //Bounding box. (cup)
 
-    float cup_l = cup->position.y + 0.12;
-    float cup_h = cup->position.z + 0.2;
+    //Bounding box. (trophy)
 
-    if(iceball_r <= cup_l && iceball_b <= cup_h)
+    float trophy_l = trophy->position.y+ 0.45;
+    float trophy_h = trophy->position.z + 2.7;
+
+    if(iceball_r <= trophy_l && iceball_b <= trophy_h)
     {
-        camera.is_win_visible = TRUE;
+        iceball->is_win_visible=TRUE;
     }
-
-*/
 
 
     //Bouncing

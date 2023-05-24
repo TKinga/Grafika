@@ -3,8 +3,8 @@
 
 #include "utils.h"
 
-//#define FALSE 1
-//#define TRUE 0
+#define FALSE 0
+#define TRUE 1
 
 typedef struct Camera
 {
@@ -16,9 +16,7 @@ int is_preview_visible;
 
 int is_guide_visible;
 
-int is_lose_visible;
 
-int is_win_visible;
 
 }Camera;
 
@@ -51,14 +49,16 @@ void set_camera_side_speed(Camera* camera, double speed);
 /*Set the speed of lifting up and down motion*/
 void set_camera_vertical_speed(Camera* camera, double speed);
 
+/*Shows the guide/win/lose screen*/
+
 void show_texture_preview();
 
-/*Shows the guide/win/lose screen*/
 void show_guide();
 
-void show_win();
 
-void show_lose();
+//void show_lose();
+
+//void show_win();
 
 
 

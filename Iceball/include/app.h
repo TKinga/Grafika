@@ -6,7 +6,7 @@
 #include <SDL2/SDL.h>
 #include "camera.h"
 #include "scene.h"
-//#include "fire.h"
+#include "fire.h"
 
 #define VIEWPORT_RATIO (4.0 / 3.0)
 #define VIEWPORT_ASPECT 50.0
@@ -20,7 +20,8 @@ typedef struct App
     double uptime;
     Camera camera;
     Scene scene;
-    //Fire fire
+    Fire fire;
+    Trophy trophy;
     //még ha vmi szükséges az includenál akkor az itt is kell pl #iclude fire.h akkor itt Fire fire;
 } App;
 

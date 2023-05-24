@@ -9,13 +9,13 @@
 #include "fire.h"
 #include "iceball.h"
 #include "skybox.h"
+#include "trophy.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <stdbool.h>
 
 
-///#include fire.h
-//#inclde cup.h
 
 typedef struct Scene
 {
@@ -26,15 +26,19 @@ typedef struct Scene
     Ice_element ice_element3;
     Skybox skybox;
     Material material;
-    //Cup cup;
+    Trophy trophy;
     Fire fire1;
     Fire fire2;
     Fire fire3;
     GLuint guide_id;
-    GLuint lose_id;
+    GLuint lose_id; 
     GLuint win_id;
-    //GLuint iceball_texture_id; 
     float lighting_changer;
+    float fog_density;
+   //bool is_lose_visible;
+    //bool is_win_visible;
+
+    //GLuint iceball_texture_id; 
 
 }Scene;
 
@@ -51,7 +55,7 @@ void set_lighting(float light);
 
 
 /*Set the lighting of the scene*/
-void set_lighting_changer(float light);
+//void set_lighting_changer(float light);
 
 
 /*Set the current material*/
@@ -68,9 +72,13 @@ void update_scene(Scene* scene);
 /*Reset the brightness of the screen*/
 void reset_lights();
 
+//void reset_fog();
+
 
 /*Draw the origin of the world coordinate system*/
 void draw_origin();
+
+
 
 
 #endif

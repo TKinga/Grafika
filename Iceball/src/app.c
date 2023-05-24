@@ -146,34 +146,48 @@ void handle_app_events(App* app)
 
             case SDL_SCANCODE_R:
                 reset_camera(&(app->camera));
-                reset_lights();
+                reset_lights(&(app->scene.lighting_changer));
+                //reset_fog(&(app->scene.fog_density));
                 reset_iceball(&(app->scene.iceball));
-                if(camera.is_win_visible) //előtte simán volt is_win_visible
-                camera.is_win_visible = FALSE;
-                if(camera.is_lose_visible) //előtte simán volt is_lose_visible
-                camera.is_lose_visible = FALSE;
+                if(app->scene.iceball.is_win_visible) //előtte simán volt is_win_visible
+                app->scene.iceball.is_win_visible = FALSE;
+                if(app->scene.iceball.is_lose_visible) //előtte simán volt is_lose_visible
+                app->scene.iceball.is_lose_visible = FALSE;
                 break;
 //itt is scene.iceball volt
             case SDL_SCANCODE_J:
-                setting_iceball_moving_speed(&(app->scene.iceball), 3);
-                setting_iceball_rotation(&(app->scene.iceball), -240); 
+                setting_iceball_moving_speed(&(app->scene.iceball), 3); //itt ha - akkor jó az irány!!!!  pfff most emg csak +
+                setting_iceball_rotation(&(app->scene.iceball), -240); //de most már itt - kellene + helyett mert úgy megy :)
                 break;
             case SDL_SCANCODE_L:
-                setting_iceball_moving_speed(&(app->scene.iceball), -3);
-                setting_iceball_rotation(&(app->scene.iceball), 240); 
+                setting_iceball_moving_speed(&(app->scene.iceball), -3); //itt ha + akkor jó az irány!!!!!!!!!!!!!  pfff most emg csak -
+                setting_iceball_rotation(&(app->scene.iceball), 240); //de most már itt + kellene - helyett  mert úgy megy :)
                 break;    
             case SDL_SCANCODE_I:
                 setting_upward_speed(&(app->scene.iceball), 12); 
                 break;
 
-            case SDL_SCANCODE_KP_PLUS:
-                if (app->scene.lighting_changer < 1)
-                set_lighting_changer(0.2);
+            case SDL_SCANCODE_K:
+                printf("%f, %f \n", app->scene.iceball.position.y, app->scene.fire1.position.y);
+                break;  
+
+            case SDL_SCANCODE_Y: //ez Z :') az angol opengl miatt
+                app->scene.fog_density += 0.05f;
+                glFogf(GL_FOG_DENSITY, app->scene.fog_density);
                 break;
+            case SDL_SCANCODE_T:
+                app->scene.fog_density -= 0.05f;
+                glFogf(GL_FOG_DENSITY, app->scene.fog_density);
+                break;     
+
+            case SDL_SCANCODE_KP_PLUS: 
+                app->scene.lighting_changer += 0.2;
+                break;
+
             case SDL_SCANCODE_KP_MINUS:
-                if (app->scene.lighting_changer > 0)
-                set_lighting_changer(-0.2);
+                app->scene.lighting_changer -=0.2;
                 break;
+
             case SDL_SCANCODE_F1:
                 if (app->camera.is_guide_visible==0)
                     app->camera.is_guide_visible = 1;
@@ -185,11 +199,30 @@ void handle_app_events(App* app)
                         -.06, .06,  
                         .1, 7000); //.1, 6000
                 } break;
-            
+
+            case SDL_SCANCODE_LEFT:
+            set_camera_speed(&(app->camera), -0.412);  //-0.512
+            set_camera_side_speed(&(app->camera), 1.95); //2.95
+            setting_iceball_moving_speed(&(app->scene.iceball), 3);
+            setting_iceball_rotation(&(app->scene.iceball), -240);
+            break;
+
+            case SDL_SCANCODE_RIGHT:
+            set_camera_speed(&(app->camera), 0.412); //0.512
+            set_camera_side_speed(&(app->camera), -1.95); //-2.95  
+            setting_iceball_moving_speed(&(app->scene.iceball), -3);
+            setting_iceball_rotation(&(app->scene.iceball), 240);
+            break;
+
+            case SDL_SCANCODE_UP:
+            setting_upward_speed(&(app->scene.iceball), 12);
+            break;
         default:
             break;
 
-            } break;
+          } break;
+
+          
 
         case SDL_KEYUP:
             switch (event.key.keysym.scancode) {
@@ -213,10 +246,28 @@ void handle_app_events(App* app)
                 set_camera_vertical_speed(&(app->camera), 0.0);  
                 break;
 
-           // case SDL_SCANCODE_KP_PLUS:
-            //case SDL_SCANCODE_KP_MINUS:
-               //set_lighting_changer(0.0);
-                //break;
+            case SDL_SCANCODE_LEFT:
+            set_camera_speed(&(app->camera), 0);
+            set_camera_side_speed(&(app->camera), 0);
+            setting_iceball_moving_speed(&(app->scene.iceball), 0);
+            setting_iceball_rotation(&(app->scene.iceball), 0);
+            break;
+
+            case SDL_SCANCODE_RIGHT:
+            set_camera_speed(&(app->camera), 0);
+            set_camera_side_speed(&(app->camera), 0);
+            setting_iceball_moving_speed(&(app->scene.iceball), 0);
+            setting_iceball_rotation(&(app->scene.iceball),0);
+            break;
+
+            case SDL_SCANCODE_UP:
+            setting_upward_speed(&(app->scene.iceball), 0);
+            break;
+
+           //case SDL_SCANCODE_KP_PLUS:
+           //case SDL_SCANCODE_KP_MINUS:
+           //set_lighting(&(app->scene.lighting_changer), 0.0);
+           //break;
                 
             default:
                 break;
@@ -281,12 +332,12 @@ void render_app(App* app)
 
     }
 
-    if (app->camera.is_lose_visible==1) {
+    if (app->scene.iceball.is_lose_visible==1) {
         show_lose();
 
     }
 
-    if (app->camera.is_win_visible==1) {
+    if (app->scene.iceball.is_win_visible==1) {
         show_win();
     }
 
@@ -307,4 +358,3 @@ void destroy_app(App* app)
 
     SDL_Quit();
 }
-
