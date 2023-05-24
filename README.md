@@ -40,6 +40,8 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 <kbd>A</kbd> - Kamera mozgatása balra <br />
 <kbd>S</kbd> - Kamera mozgatása hátra <br />
 <kbd>D</kbd> - Kamera mozgatása jobbra <br />
+<kbd>Q</kbd> - Kamera mozgatása fel <br />
+<kbd>E</kbd> - Kamera mozgatása le <br />
 
 <kbd>J</kbd> - Jéggömb mozgatása balra <br />
 <kbd>L</kbd> - Jéggömb mozgatása jobbra <br />
