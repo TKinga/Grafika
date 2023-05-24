@@ -34,7 +34,7 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 ### ***Billentyűkombinációk***
 
 <kbd>F1</kbd> - User Guide előhívása, eltüntetése <br />
-<kbd>R</kbd> - Restart the game <br />
+<kbd>R</kbd> - Játék újraindítása <br />
 
 <kbd>W</kbd> - Kamera mozgatása előre <br />
 <kbd>A</kbd> - Kamera mozgatása balra <br />
