@@ -46,7 +46,7 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 
 <kbd>J</kbd> - Jéggömb mozgatása balra <br />
 <kbd>L</kbd> - Jéggömb mozgatása jobbra <br />
-<kbd>I</kbd> - Jéggömb mozgatása előre <br />
+<kbd>I</kbd> - Jéggömb mozgatása fel <br />
 
 <kbd><</kbd> - Jéggömb és kamera mozgatása balra <br />
 <kbd>></kbd> - Jéggömb és kamera mozgatása jobbra <br />
