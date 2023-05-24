@@ -31,6 +31,7 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 
 * akadályok megvalósítása és következményeinek kezelése (azaz ha a tűzbe érkezik a jéggömb a játék véget ér)
 
+### ***Billentyűkombinációk***
 
 <kbd>F1</kbd> - User Guide előhívása, eltüntetése <br />
 
@@ -52,10 +53,3 @@ https://drive.google.com/drive/folders/1DWTVtITzMEL_WwvZ6Q3bmHI1k7ug3zIz?usp=sha
 
 <kbd>+</kbd> - Fénynövelés <br />
 <kbd>-</kbd> - Fénycsökkentés <br />
-
-
-
-
-
-
-
